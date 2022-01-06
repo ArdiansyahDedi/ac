@@ -12,7 +12,6 @@ for i in range(ip):
 	fp.close()
 	os.system('git add \"' + date + '.py\"')
 	os.system('git commit -m \"New Commit at:' + date + '\"')
-	time.sleep(1)
 
 print("Commited " + str(ip) + " times")
 
