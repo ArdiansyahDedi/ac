@@ -1,19 +1,24 @@
 import os
-import time
-import datetime
 
-ip = int(raw_input("How many times do you want to commit? \n"))
-autoPush = raw_input("Auto git push when commited? (y/n) \n")
+ip = int(input("How many times do you want to commit? \n"))
+autoPush = input("Auto git push when commited? (y/n) \n")
 
 for i in range(ip):
-        date = datetime.datetime.now().strftime("%d-%b-%Y(%H:%M:%S)")
-	fp = open(date + ".py", 'w')
-	fp.write('print(\"' + date + '\")')
-	fp.close()
-	os.system('git add \"' + date + '.py\"')
-	os.system('git commit -m \"New Commit at:' + date + '\"')
+	# os.system('git commit --allow-empty -m "New Commit at: $(date)"')
+	os.system(f'git commit --allow-empty -m "Commit {i} of {ip}"')	
 
 print("Commited " + str(ip) + " times")
 
 if autoPush == "y":
 	os.system('git push')
+	
+# git commit --allow-empty -m "New Commit at: $(date)"
+
+#  MADE BY:_            _   _____                        _ 
+#  \ \    / (_)        (_) |  __ \                      (_)
+#   \ \  / / _ _ __ ___ _  | |  | | __ _ ___  __ _ _ __  _ 
+#    \ \/ / | | '__/ _ \ | | |  | |/ _` / __|/ _` | '_ \| |
+#     \  /  | | | |  __/ | | |__| | (_| \__ \ (_| | | | | |
+#      \/   |_|_|  \___| | |_____/ \__,_|___/\__,_|_| |_|_|
+#                     _/ |                                 
+#                    |__/                                  
